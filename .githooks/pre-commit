@@ -1,0 +1,7 @@
+#!/bin/sh
+# Enabled via `bun install` (the "prepare" script sets core.hooksPath).
+# Run `bun run verify` before pushing template changes; it is too slow for every commit.
+set -e
+bun run format:check
+bun run lint
+bun run typecheck

@@ -1,0 +1,9 @@
+{
+    "description": "{{GAME_TITLE}}, a YouTube Playable built with Phaser 3.",
+    "scripts": {
+        "validate": "bun scripts/validate-playable.ts --allow-url https://phaser.io"
+    },
+    "dependencies": {
+        "phaser": "^3.90.0"
+    }
+}

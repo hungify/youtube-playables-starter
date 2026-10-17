@@ -1,0 +1,106 @@
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1b1033;
+    color: #ffffff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#gameParent {
+    position: fixed;
+    inset: 0;
+}
+
+#gameParent canvas {
+    display: block;
+    /* Drag steers the orb; the page must not scroll or zoom under the finger. */
+    touch-action: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.hud {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+#combo {
+    color: #5cf2b2;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: rgba(27, 16, 51, 0.55);
+    text-align: center;
+}
+
+.overlay h1 {
+    margin: 0;
+    font-size: clamp(40px, 9vw, 72px);
+    color: #ffc857;
+}
+
+.overlay p {
+    margin: 0;
+    font-size: 24px;
+}
+
+.overlay .hint {
+    max-width: 80vw;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Playables design guidance: touch targets of at least 48dp. */
+.overlay button {
+    min-width: 200px;
+    min-height: 64px;
+    padding: 0 32px;
+    border: none;
+    border-radius: 32px;
+    background: #ffc857;
+    color: #1b1033;
+    font: inherit;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.overlay button:focus-visible {
+    outline: 4px solid #8fd3ff;
+    outline-offset: 4px;
+}
+
+/* Playables design best practice: make the paused state obvious and never look like a crash. */
+#paused {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 48px;
+    letter-spacing: 4px;
+    pointer-events: none;
+}

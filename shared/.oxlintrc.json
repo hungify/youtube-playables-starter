@@ -1,0 +1,38 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["typescript", "unicorn", "oxc"],
+    "categories": {
+        "correctness": "error",
+        "suspicious": "error",
+        "perf": "warn"
+    },
+    "env": {
+        "browser": true,
+        "es2022": true,
+        "node": true
+    },
+    "globals": {
+        "ytgame": "readonly"
+    },
+    "rules": {
+        "no-restricted-globals": [
+            "error",
+            {
+                "name": "localStorage",
+                "message": "YouTube Playables Certification Rule #4 forbids localStorage for game progress. Use YouTubePlayables.saveData() / loadData()."
+            },
+            {
+                "name": "sessionStorage",
+                "message": "YouTube Playables Certification Rule #4 forbids sessionStorage for game progress. Use YouTubePlayables.saveData() / loadData()."
+            },
+            {
+                "name": "indexedDB",
+                "message": "YouTube Playables Certification Rule #4 forbids indexedDB for game progress. Use YouTubePlayables.saveData() / loadData()."
+            }
+        ],
+        "typescript/no-explicit-any": "error",
+        "typescript/no-non-null-assertion": "error",
+        "unicorn/prefer-node-protocol": "error"
+    },
+    "ignorePatterns": ["**/dist/**", "**/node_modules/**", ".claude/**"]
+}

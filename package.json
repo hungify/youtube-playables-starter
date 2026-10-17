@@ -1,0 +1,41 @@
+{
+    "name": "youtube-playables-starter",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Starter for YouTube Playables games: `bun run create` makes a standalone 2D (Phaser) or 3D (three.js) project with the SDK, certification checks, tests and AI tooling wired in.",
+    "homepage": "https://github.com/hungify/youtube-playables-starter#readme",
+    "bugs": {
+        "url": "https://github.com/hungify/youtube-playables-starter/issues"
+    },
+    "license": "MIT",
+    "author": "hungify",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hungify/youtube-playables-starter.git"
+    },
+    "type": "module",
+    "packageManager": "bun@1.4.3",
+    "engines": {
+        "bun": ">=1.4.0"
+    },
+    "bin": {
+        "create-playable": "./scripts/create.ts"
+    },
+    "scripts": {
+        "create": "bun scripts/create.ts",
+        "verify": "bun scripts/verify.ts",
+        "verify:e2e": "bun scripts/verify.ts --e2e",
+        "format": "oxfmt shared templates scripts",
+        "format:check": "oxfmt --check shared templates scripts",
+        "lint": "oxlint",
+        "typecheck": "tsc --noEmit",
+        "check": "bun run format:check && bun run lint && bun run typecheck",
+        "prepare": "git config core.hooksPath .githooks || true"
+    },
+    "devDependencies": {
+        "@types/bun": "^1.4.3",
+        "oxfmt": "^0.73.0",
+        "oxlint": "^1.88.0",
+        "typescript": "^7.0.2"
+    }
+}

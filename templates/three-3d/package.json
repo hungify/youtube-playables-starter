@@ -1,0 +1,12 @@
+{
+    "description": "{{GAME_TITLE}}, a YouTube Playable built with three.js.",
+    "scripts": {
+        "validate": "bun scripts/validate-playable.ts --allow-url https://jcgt.org/published/0007/04/01/"
+    },
+    "dependencies": {
+        "three": "^0.186.1"
+    },
+    "devDependencies": {
+        "@types/three": "^0.186.0"
+    }
+}

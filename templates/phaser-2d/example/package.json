@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "thumbnails": "bun scripts/capture-thumbnails.ts",
+        "audio": "bun scripts/generate-audio.ts"
+    }
+}

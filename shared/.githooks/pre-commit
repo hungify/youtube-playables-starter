@@ -1,0 +1,7 @@
+#!/bin/sh
+# Enabled via `bun install` (the "prepare" script sets core.hooksPath).
+set -e
+bun run format:check
+bun run lint
+bun run typecheck
+bun test
